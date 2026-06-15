@@ -4,6 +4,7 @@ import sys
 import time
 from dataclasses import dataclass
 from typing import Dict, Optional
+import random
 
 import cv2
 import pygame
@@ -19,7 +20,7 @@ from scoreboard import draw_scoreboard, save_score
 
 
 CAMERA_WIDTH = 960
-CAMERA_HEIGHT = 540
+CAMERA_HEIGHT = 720
 WINDOW_WIDTH = 960
 WINDOW_HEIGHT = 720
 ROUND_SECONDS = 30
@@ -52,7 +53,7 @@ class GameSession:
         self.poses_completed = 0
         self.start_time = time.time()
         self.last_match_time = 0.0
-        self.current_pose_id = 1
+        self.current_pose_id = self.current_pose_id = random.randint(1, MAX_POSES)
         self.pose_started_time = self.start_time
         self.saved_entry = None
 
@@ -67,7 +68,12 @@ class GameSession:
     def complete_pose(self) -> None:
         self.poses_completed += 1
         self.score = min(MAX_POSES * SCORE_PER_POSE, self.score + SCORE_PER_POSE)
-        self.current_pose_id += 1
+
+        new_pose = random.randint(1, MAX_POSES)
+        while new_pose == self.current_pose_id:
+            new_pose = random.randint(1, MAX_POSES)
+
+        self.current_pose_id = new_pose
         self.last_match_time = time.time()
         self.pose_started_time = self.last_match_time
 
