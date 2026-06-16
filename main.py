@@ -25,7 +25,7 @@ WINDOW_WIDTH = 960
 WINDOW_HEIGHT = 720
 ROUND_SECONDS = 30
 SCORE_PER_POSE = 100
-MAX_POSES = 31
+MAX_POSES = 30
 TARGET_FPS = 30
 MATCH_COOLDOWN_SECONDS = 0.65
 POSE_HINT_DELAY_SECONDS = 3.0
@@ -371,7 +371,7 @@ class PoseMatchGame:
             19: {"left_knee": (0.37, 0.60), "left_ankle": (0.30, 0.78)},
             20: {"right_knee": (0.63, 0.60), "right_ankle": (0.70, 0.78)},
             21: {"left_elbow": (0.25, 0.32), "left_wrist": (0.35, 0.15), "right_elbow": (0.75, 0.32), "right_wrist": (0.65, 0.15)},
-            22: {},
+            22: {"left_elbow": (0.45, 0.45), "left_wrist": (0.60, 0.35), "right_elbow": (0.55, 0.45), "right_wrist": (0.40, 0.35)},
             23: {"nose": (0.38, 0.18), "left_shoulder": (0.30, 0.32), "right_shoulder": (0.54, 0.32)},
             24: {"nose": (0.62, 0.18), "left_shoulder": (0.46, 0.32), "right_shoulder": (0.70, 0.32)},
             25: {"left_elbow": (0.20, 0.35), "left_wrist": (0.04, 0.35)},
@@ -380,7 +380,6 @@ class PoseMatchGame:
             28: {"left_elbow": (0.43, 0.33), "left_wrist": (0.49, 0.28), "right_elbow": (0.57, 0.33), "right_wrist": (0.51, 0.28)},
             29: {"left_elbow": (0.30, 0.18), "left_wrist": (0.20, 0.04), "right_elbow": (0.66, 0.60), "right_wrist": (0.72, 0.86)},
             30: {"left_elbow": (0.30, 0.18), "left_wrist": (0.22, 0.04), "right_elbow": (0.70, 0.18), "right_wrist": (0.78, 0.04)},
-            31: {"left_elbow": (0.45, 0.45), "left_wrist": (0.60, 0.35), "right_elbow": (0.55, 0.45), "right_wrist": (0.40, 0.35)}
         }
         base.update(presets.get(pose_id, {}))
         return base

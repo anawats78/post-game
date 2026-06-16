@@ -331,7 +331,7 @@ POSE_TEMPLATES: List[PoseTemplate] = [
     PoseTemplate(19, "Left Knee Up", {"left_knee": 100}, _relations(("above", "left_knee", "right_knee", 0.25))),
     PoseTemplate(20, "Right Knee Up", {"right_knee": 100}, _relations(("above", "right_knee", "left_knee", 0.25))),
     PoseTemplate(21,  "ABSALUTE CINEMA", {}),
-    PoseTemplate(22, "Straight Stand", {"left_knee": 160, "right_knee": 160}, _relations(("below", "left_wrist", "left_shoulder", 0.1), ("below", "right_wrist", "right_shoulder", 0.1))),
+    PoseTemplate(22, "PLUS SIA NOO", {}),
     PoseTemplate(23, "Left Lean", {}, _relations(("left_of", "nose", "left_hip", 0.05))),
     PoseTemplate(24, "Right Lean", {}, _relations(("right_of", "nose", "right_hip", 0.05))),
     PoseTemplate(25, "Left Punch", {"left_elbow": 145}, _relations(("same_y", "left_wrist", "left_shoulder", 0.9), ("left_of", "left_wrist", "left_shoulder", 0.35))),
@@ -339,8 +339,7 @@ POSE_TEMPLATES: List[PoseTemplate] = [
     PoseTemplate(27, "Goalkeeper", {"left_elbow": 110, "right_elbow": 110}, _relations(("above", "left_wrist", "left_shoulder", 0.1), ("above", "right_wrist", "right_shoulder", 0.1), ("far", "left_wrist", "right_wrist", 1.3))),
     PoseTemplate(28, "Small Circle Arms", {"left_elbow": 65, "right_elbow": 65}, _relations(("near", "left_wrist", "right_wrist", 0.8), ("above", "left_wrist", "left_hip", 0.3))),
     PoseTemplate(29, "Diagonal Left", {"left_elbow": 165, "right_elbow": 165}, _relations(("above", "left_wrist", "left_shoulder", 0.4), ("below", "right_wrist", "right_hip", 0.0))),
-    PoseTemplate(30, "Victory Pose", {"left_elbow": 165, "right_elbow": 165}, _relations(("above", "left_wrist", "left_shoulder", 0.4), ("above", "right_wrist", "right_shoulder", 0.4), ("far", "left_wrist", "right_wrist", 1.2))),
-    PoseTemplate(31, "PLUS SIA NOO", {})
+    PoseTemplate(30, "Victory Pose", {"left_elbow": 165, "right_elbow": 165}, _relations(("above", "left_wrist", "left_shoulder", 0.4), ("above", "right_wrist", "right_shoulder", 0.4), ("far", "left_wrist", "right_wrist", 1.2)))
 ]
 
 
