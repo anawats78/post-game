@@ -242,8 +242,11 @@ class PoseMatchGame:
             for i, line in enumerate(lines):
                 self._draw_center(line, self.fonts["title"], y0 + (i * 70), (0,220,255))
 
-        panel = pygame.Rect(0, CAMERA_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT - CAMERA_HEIGHT)
-        pygame.draw.rect(self.screen, (14, 18, 24), panel)
+        bottom_bar_height = 180
+        overlay = pygame.Surface((WINDOW_WIDTH, bottom_bar_height), pygame.SRCALPHA)
+        # เติมสีดำอมน้ำเงิน พร้อมตั้งค่าความทึบแสงที่ 200 (เต็ม 255)
+        overlay.fill((14, 18, 24, 200)) 
+        self.screen.blit(overlay, (0, WINDOW_HEIGHT - bottom_bar_height))
 
         pose = self.session.current_pose
         status = "MATCHED" if matched else ("DETECTING" if keypoints_detected else "NO BODY DETECTED")
