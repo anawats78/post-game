@@ -43,7 +43,7 @@ ANGLE_POINTS = {
 
 MODEL_PATH = "yolov8n-pose.pt"
 CONFIDENCE_THRESHOLD = 0.25
-INFERENCE_IMAGE_SIZE = 640
+INFERENCE_IMAGE_SIZE = 320
 DEFAULT_TOLERANCE = 38
 
 _model = None
@@ -330,7 +330,7 @@ POSE_TEMPLATES: List[PoseTemplate] = [
     PoseTemplate(18, "Cross Arms", {"left_elbow": 80, "right_elbow": 80}, _relations(("near", "left_wrist", "right_elbow", 1.0), ("near", "right_wrist", "left_elbow", 1.0))),
     PoseTemplate(19, "Left Knee Up", {"left_knee": 100}, _relations(("above", "left_knee", "right_knee", 0.25))),
     PoseTemplate(20, "Right Knee Up", {"right_knee": 100}, _relations(("above", "right_knee", "left_knee", 0.25))),
-    PoseTemplate(21, "Squat", {"left_knee": 110, "right_knee": 110}, _relations(("below", "left_hip", "left_knee", 0.05), ("below", "right_hip", "right_knee", 0.05))),
+    PoseTemplate(21,  "ABSALUTE CINEMA", {}),
     PoseTemplate(22, "Straight Stand", {"left_knee": 160, "right_knee": 160}, _relations(("below", "left_wrist", "left_shoulder", 0.1), ("below", "right_wrist", "right_shoulder", 0.1))),
     PoseTemplate(23, "Left Lean", {}, _relations(("left_of", "nose", "left_hip", 0.05))),
     PoseTemplate(24, "Right Lean", {}, _relations(("right_of", "nose", "right_hip", 0.05))),
@@ -340,8 +340,7 @@ POSE_TEMPLATES: List[PoseTemplate] = [
     PoseTemplate(28, "Small Circle Arms", {"left_elbow": 65, "right_elbow": 65}, _relations(("near", "left_wrist", "right_wrist", 0.8), ("above", "left_wrist", "left_hip", 0.3))),
     PoseTemplate(29, "Diagonal Left", {"left_elbow": 165, "right_elbow": 165}, _relations(("above", "left_wrist", "left_shoulder", 0.4), ("below", "right_wrist", "right_hip", 0.0))),
     PoseTemplate(30, "Victory Pose", {"left_elbow": 165, "right_elbow": 165}, _relations(("above", "left_wrist", "left_shoulder", 0.4), ("above", "right_wrist", "right_shoulder", 0.4), ("far", "left_wrist", "right_wrist", 1.2))),
-    PoseTemplate(31, "PLUS SIA NOO", {}),
-    PoseTemplate(32, "ABSALUTE CINEMA", {})
+    PoseTemplate(31, "PLUS SIA NOO", {})
 ]
 
 
